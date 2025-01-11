@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+header{
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically align items */
+    padding:  80px;
+    background-color: white;
+
+  
+
+}
+
+nav{
+  position: relative;
+  width: 100%;
+
+}
+
+nav ul{
+    display: flex;
+    justify-content: right;
+    margin-right: 100px;
+    list-style: none;
+    gap: 2.5rem;
+  
+}
+
+h1{
+   margin-left: 50px;
+}
+
+
+nav ul a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+nav a:hover{
+    color: #4CAF50;
+}
+
+.About h2{
+    font-family: "Funnel Display", serif;
+}
+
+P {
+    font-family: "Funnel Display", serif;
+}
+.About{
+    display: flex;
+    
+    flex-direction: column;  /* Stack text and image vertically */
+    justify-content: center;  /* Vertically center the content within .About */
+    align-items: center;  /* Horizontally center the content within .About */
+    text-align: center;
+    font-size: 1.5rem;
+    width: 80%;  /* Adjust the width as needed */
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+   
+    margin-left:500px;
+   
+}
+
+.image-of-me{
+    width: 200px; /* Set image width */
+    height: 200px; /* Set image height */
+    object-fit: cover; /* Crop the image to fit dimensions */
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid #4CAF50; /* Add a green border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    transition: transform 0.3s ease; /* Add a hover effect */
+    opacity: 0.8; 
+}
+
+.image-of-me:hover {
+    transform: scale(1.1); /* Enlarge image on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Intensify shadow on hover */
+  }
+

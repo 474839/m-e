@@ -36,6 +36,11 @@ header {
 h1 {
     font-size: 1.8rem;
     font-weight: 600;
+   
+}
+
+h2{
+    font-family: "Bebas Neue", serif;
 }
 
 nav ul {
@@ -56,14 +61,20 @@ nav a:hover {
     color: #fff;
     opacity: 1;
 }
-
 .About {
     padding: 8rem 5% 4rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
+    align-items: flex-start; /* Align text to the left */
+    justify-content: center; /* Center vertically */
+    
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Adjust the left position to push the section right */
+    transform: translateY(-50%); /* Keep it vertically centered */
+    
+    width: 100%;
+    height: auto;
 }
 
 .About h2 {
@@ -76,17 +87,11 @@ nav a:hover {
 
 .About p {
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem 0; /* Align to left */
     line-height: 1.6;
     font-size: 1.2rem;
     color: #aaa;
-}
-
-.image-of-me {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    text-align: left; /* Ensure the text aligns to the left */
 }
 
 .trusted-users {
@@ -154,14 +159,18 @@ nav a:hover {
     }
 }
 
-
-p {
-    transform: translateY(20px) scale(0.8); /* Start slightly downscaled and moved */
-    opacity: 0; /* Fully transparent */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth scaling, fading, and moving */
+.popup-animation {
+    animation: popup 1s ease-out forwards;
   }
   
-  p.popup-animation {
-    transform: translateY(0) scale(1); /* Move to its normal position and size */
-    opacity: 1; /* Fully visible */
+  @keyframes popup {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
+

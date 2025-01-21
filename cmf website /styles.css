@@ -95,7 +95,6 @@ video {
   font-size: 18px;
   margin-top: 50px;
   border-radius: 0.5em;
-  background: #ff6700;
   cursor: pointer;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
@@ -425,5 +424,70 @@ video {
   }
   
 
-
+/* About Section Styling */
+.about-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
   
+  .content-wrapper {
+    max-width: 700px;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fade-in 1.2s ease-in-out;
+  }
+  
+  .about-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #222;
+    animation: slide-in 1s ease-out forwards;
+    opacity: 0; /* Initially hidden for animation */
+  }
+  
+  .about-hero h1 .highlight {
+    color: #ff6600; /* Accent color for CMF */
+  }
+  
+  .about-hero p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #555;
+    animation: fade-in 1.5s ease-in 0.5s forwards; /* Delayed animation for paragraph */
+    opacity: 0; /* Initially hidden for animation */
+  }
+  
+  .about-hero p .fade-text {
+    font-weight: 600;
+    color: #222;
+  }
+  
+  /* Animations */
+  @keyframes slide-in {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

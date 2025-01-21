@@ -1,25 +1,56 @@
-const paragraph = document.querySelector('p');
-
-// Function to check if the paragraph is in the viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 && rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Function to trigger the animation
-function onScroll() {
-  if (isInViewport(paragraph)) {
-    paragraph.classList.add('popup-animation'); // Add the animation class when in viewport
-    window.removeEventListener('scroll', onScroll); // Remove the scroll event listener after animation triggers
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+  const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  const rotation = scrollProgress * 360;
+  
+  // Create or get scroll indicator element
+  let scrollIndicator = document.querySelector('.scroll-indicator');
+  if (!scrollIndicator) {
+      scrollIndicator = document.createElement('div');
+      scrollIndicator.className = 'scroll-indicator';
+      document.body.appendChild(scrollIndicator);
   }
+  
+  scrollIndicator.style.transform = `rotate(${rotation}deg)`;
+});
+
+// Parallax scroll effect
+window.addEventListener('scroll', () => {
+  const projects = document.querySelectorAll('.project');
+  const scrolled = window.pageYOffset;
+  
+  projects.forEach((project, index) => {
+      const speed = 1 + (index * 0.1); // Different speed for each project
+      const yPos = -(scrolled * speed * 0.03);
+      project.style.transform = `translateY(${yPos}px)`;
+  });
+});
+
+// Smooth scroll to sections when clicking nav links
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const section = document.querySelector(this.getAttribute('href'));
+      if (section) {
+          section.scrollIntoView({
+              behavior: 'smooth'
+          });
+      }
+  });
+});
+
+// Reveal elements on scroll
+const revealOnScroll = () => {
+  const elements = document.querySelectorAll('.About, .project');
+  
+  elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('active');
+      }
+  });
 }
 
-// Add event listener for scroll
-window.addEventListener('scroll', onScroll);
-
-// Optional: Check if the paragraph is already in the viewport when the page loads
-window.addEventListener('load', onScroll);
+window.addEventListener('scroll', revealOnScroll);

@@ -39,9 +39,6 @@ h1 {
    
 }
 
-h2{
-    font-family: "Bebas Neue", serif;
-}
 
 nav ul {
     display: flex;
@@ -61,75 +58,28 @@ nav a:hover {
     color: #fff;
     opacity: 1;
 }
+
 .About {
-    padding: 8rem 5% 4rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
-    justify-content: center; /* Center vertically */
-    
-    position: absolute;
-    top: 50%;
-    left: 10%; /* Adjust the left position to push the section right */
-    transform: translateY(-50%); /* Keep it vertically centered */
-    
-    width: 100%;
-    height: auto;
+    justify-content: center;
+    /* Change min-height to a more reasonable value */
+    min-height: auto;
+    padding: 120px 2rem 2rem; /* Added top padding to account for fixed header */
+    max-width: 800px;
+    left: 12%;
 }
 
 .About h2 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    font-weight: 600;
     margin-bottom: 2rem;
-    background: linear-gradient(45deg, #fff, #666);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .About p {
-    max-width: 800px;
-    margin: 0 0 3rem 0; /* Align to left */
-    line-height: 1.6;
     font-size: 1.2rem;
-    color: #aaa;
-    text-align: left; /* Ensure the text aligns to the left */
-}
-
-.trusted-users {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 2rem 0;
-}
-
-.app-badges {
-    display: flex;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.app-badge {
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.cta-button {
-    background: #fff;
-    color: #000;
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 2rem 0;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -173,4 +123,84 @@ nav a:hover {
       opacity: 1;
     }
   }
+  .Projects {
+    padding: 4rem 2rem;
+    background-color: #000;
+    color: #fff;
+    
+}
+
+.Projects h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: rgba(196, 181, 253, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Added for links */
+    display: block; /* Added for links */
+}
+
+.project:hover {
+    transform: translateY(-8px);
+}
+
+.project img,
+.project video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.About {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Change min-height to a more reasonable value */
+    min-height: auto;
+    padding: 120px 2rem 2rem; /* Added top padding to account for fixed header */
+    max-width: 800px;
+    left: 12%;
+}
+.project h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1.5rem 1.5rem 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project p {
+    margin: 0 1.5rem 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .Projects {
+        padding: 3rem 1rem;
+    }
+    
+    .Projects h2 {
+        font-size: 2rem;
+    }
+    
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 

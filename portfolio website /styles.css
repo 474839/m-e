@@ -58,17 +58,18 @@ nav a:hover {
     color: #fff;
     opacity: 1;
 }
-
 .About {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Change min-height to a more reasonable value */
+
+    /* Adjustments for responsive and alignment */
     min-height: auto;
-    padding: 120px 2rem 2rem; /* Added top padding to account for fixed header */
-    max-width: 800px;
-    left: 12%;
+    height: 90vh;
+    padding: 120px 2rem 2rem; /* Maintains top padding */
+    max-width: 1400px; /* Increased width */
+    left: 10%; /* Adjusted for a more centered look if needed */
 }
 
 .About h2 {
@@ -106,6 +107,8 @@ nav a:hover {
 
     .About {
         padding: 6rem 3% 3rem;
+        max-width: 100%; /* Ensures full width on smaller screens */
+        left: 0; /* Centers the section on small screens */
     }
 }
 
@@ -139,12 +142,11 @@ nav a:hover {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Force a 2x2 grid */
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .project {
     background-color: rgba(196, 181, 253, 0.1);
     border-radius: 24px;
@@ -217,7 +219,7 @@ nav a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #ffffff;
+    background: #000;
     padding: 4rem 2rem 2rem;
     z-index: -1;
     /* Adjust this height to match footer-wrapper */
@@ -230,18 +232,18 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
-    color: #000;
+    color: #fff;
 }
 
 .footer-section h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
-    color: #000;
+    color: #fff;
 }
 
 .footer-section p {
-    color: #666;
+    color: #fff;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -254,8 +256,8 @@ nav a:hover {
 
 .social-link {
     padding: 0.5rem 1rem;
-    background: #000;
-    color: #fff;
+    background: #ffff;
+    color: #000;
     text-decoration: none;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -263,7 +265,7 @@ nav a:hover {
 }
 
 .social-link:hover {
-    background: #333;
+    background: #fff;
     transform: translateY(-2px);
 }
 
@@ -277,17 +279,17 @@ nav a:hover {
 }
 
 .footer-nav a {
-    color: #666;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-nav a:hover {
-    color: #000;
+    color: #fff;
 }
 
 .footer-projects li {
-    color: #666;
+    color: #000;
     position: relative;
     padding-left: 1.2rem;
 }
@@ -296,16 +298,16 @@ nav a:hover {
     content: "→";
     position: absolute;
     left: 0;
-    color: #000;
+    color: #fff;
 }
 
 .footer-bottom {
     max-width: 1200px;
     margin: 2rem auto 0;
     padding-top: 2rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #000;
     text-align: center;
-    color: #666;
+    color: #000;
 }
 
 /* Making the page content scroll over the footer */
